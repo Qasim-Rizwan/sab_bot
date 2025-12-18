@@ -1,0 +1,47 @@
+/////////////////////////////////////////////
+////////////    The MS DB     ///////////////
+/////////////////////////////////////////////
+I want the bot to be able to answer properly when asked to find sawblades, calipers whatever it might be. And not hallucinate
+specs. It should be fast and smart, and ask follow up questions if it is unsure which product to find.
+Sawblades can be for wood, and metal etc. So it needs to know the difference. Everything can be found in the DB.
+Some products have similair names, like bandsaw blades, sawblades, digital calipers, calipers, knives, drills etc.
+
+For the DB I tried to make it a bit easier for you to understand so here are some rules and SQL commands I used:
+
+
+Rules:
+In table Products
+IsDeleted = 0
+Parent = !purchases
+MarketsSerialized = must contain 001. (or whatever the users market is) 
+
+
+Products: Column SanitizedItemNumber = unique code for each item. And on the website you can type:  https://www.kyocera-unimerco.com/en-dk/product-detail/SanitizedItemNumber such as https://www.kyocera-unimerco.com/en-dk/product-detail/MT10A6090-910-00530140 
+Products: Hierarchy for column "extra" is always empty meaning ''
+Products: extra are usually without pictures, and specs are not visible on website. However it shows what the sparepart is for in: Products>ItemDescriptionSerialized
+Products: FilterMetaDataSerialized contain codes such as"W081CADJ" sometimes the field afterwards is empty. {"W081CADJ":{},"W081CBD":{"da":"\u 
+We skip the empty ones. The beginning of the code is usually taken from Products>MetaClass that would look like: W081C
+SimpleMetaFields: FieldName would be our name for W081CADJ which is always the same regardless of product. Can mean Bore, or Saw Blade Type etc. We have a total of 1047 rows in SimpleMetaFields
+ÆØÅ seem to be written wierdly. Længde is written as L\u00E6ngde and Højde as h\u00f8jde Størrelse as St\u00F8rrelse and Skrå as Skr\u00E5 The other languages that use weird letters seem to have same issues.
+
+
+SELECT * FROM Products
+WHERE IsDeleted = 0
+AND Parent != 'purchases'
+AND MarketsSerialized LIKE '%001%'
+
+001 is the Danish market, we focus on that for now, we can ignore the others.
+
+/////////////////////////////////////////////
+////////////    THE REST      ///////////////
+/////////////////////////////////////////////
+
+Link to DB file: https://mega.nz/file/MBxCnBII#kiOsLBmYhxhrDWl9KWqZugF1GfgeeVS8jlApjGrpx68
+Link to Frontend: https://mega.nz/file/wNxm1bSA#Gi37I3mgg2m_ijP6lcZmWzbPFLeDleG4MAXTXpY2oAM 
+(feel free to change it, I just like the theme) The server and all that you can delete/change it was just to see.
+The ENV files contains the API key to open AI if you need to login or change something in there let me know. (Like promt id etc.)
+You can use python/node any language you prefer, the front end should preferably be React or Next. 
+
+Let me know if you have any questions.
+
+

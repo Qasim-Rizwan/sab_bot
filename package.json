@@ -1,0 +1,21 @@
+{
+  "name": "kyocera-unimerco-proxy",
+  "version": "1.0.0",
+  "description": "Proxy server to combine frontend and backend behind single port for ngrok tunneling",
+  "main": "proxy.js",
+  "scripts": {
+    "proxy": "node proxy.js"
+  },
+  "dependencies": {
+    "http-proxy": "^1.18.1"
+  }
+}
+
+
+
+
+
+
+
+
+

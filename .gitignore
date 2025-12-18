@@ -1,0 +1,11 @@
+backend/data/products_joined.json
+backend/scripts/**/chroma_db/**
+backend/scripts/**/chroma_db1/**
+frontend/.next/**
+node_modules/**
+.env
+.env.*
+__pycache__/**
+*.pyc
+*.log
+

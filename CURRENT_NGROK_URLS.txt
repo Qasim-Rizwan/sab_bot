@@ -1,0 +1,64 @@
+===========================================
+  NGROK TUNNELS - CURRENT SESSION
+===========================================
+
+✅ BACKEND URL (Port 8000):
+   https://3745bd8cd40d.ngrok-free.app
+   
+   Use this for: NEXT_PUBLIC_API_URL environment variable
+
+✅ FRONTEND URL (Port 3000):
+   https://cfce5616a84a.ngrok-free.app
+   
+   Share this URL with clients to access the chatbot
+
+===========================================
+  QUICK SETUP COMMANDS
+===========================================
+
+1. BACKEND (Terminal 1):
+   cd C:\Users\qasim\Desktop\db_fahad\backend
+   python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+2. NGROK (Terminal 2):
+   cd C:\Users\qasim\Downloads\ngrok-v3-stable-windows-386
+   .\ngrok.exe start --all --config C:\Users\qasim\Desktop\db_fahad\ngrok.yml
+
+3. FRONTEND (Terminal 3) - WITH BACKEND URL:
+   cd C:\Users\qasim\Desktop\db_fahad\frontend
+   $env:NEXT_PUBLIC_API_URL="https://3745bd8cd40d.ngrok-free.app"
+   npm run dev
+
+===========================================
+  VERIFICATION
+===========================================
+
+✅ Backend Health Check:
+   http://localhost:8000
+   https://3745bd8cd40d.ngrok-free.app
+
+✅ Frontend:
+   http://localhost:3000
+   https://cfce5616a84a.ngrok-free.app
+
+✅ Ngrok Web Interface:
+   http://localhost:4040
+
+===========================================
+  IMPORTANT NOTES
+===========================================
+
+⚠️  If ngrok restarts, the URLs will change!
+    Check http://localhost:4040 for new URLs
+
+⚠️  Frontend MUST use the ngrok backend URL
+    (not localhost:8000) for remote clients
+
+⚠️  All three services must be running:
+    - Backend (port 8000)
+    - Frontend (port 3000)  
+    - Ngrok (tunnels both)
+
+===========================================
+Generated: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
+

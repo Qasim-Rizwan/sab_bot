@@ -1,0 +1,147 @@
+================================================================================
+           KYOCERA UNIMERCO - PRODUCT FINDER
+              Setup Instructions for Client
+================================================================================
+
+📋 REQUIREMENTS (Install these first):
+--------------------------------------------------------------------------------
+1. Python 3.8 or higher
+   Download: https://www.python.org/downloads/
+   ⚠️ IMPORTANT: During installation, check "Add Python to PATH"
+
+2. Node.js 16 or higher
+   Download: https://nodejs.org/
+   Use the LTS (Long Term Support) version
+
+================================================================================
+
+🚀 HOW TO RUN THE APPLICATION:
+--------------------------------------------------------------------------------
+
+METHOD 1 - EASIEST (Recommended):
+   1. Double-click "START_APPLICATION.bat"
+   2. Wait 10-15 seconds
+   3. Open browser to: http://localhost:3000
+
+METHOD 2 - Manual:
+   1. Double-click "backend.bat" (starts backend server)
+   2. Double-click "frontend.bat" (starts frontend)
+   3. Open browser to: http://localhost:3000
+
+================================================================================
+
+⏱️ FIRST TIME SETUP:
+--------------------------------------------------------------------------------
+- First run will take 5-10 minutes to install dependencies
+- Subsequent runs will be much faster (10-15 seconds)
+- You need internet connection for first-time setup only
+
+================================================================================
+
+✅ VERIFICATION:
+--------------------------------------------------------------------------------
+After starting, you should see:
+
+Backend Window:
+   "Backend is starting on port 8000"
+   "Application startup complete"
+
+Frontend Window:
+   "ready - started server on 0.0.0.0:3000"
+   "compiled client and server successfully"
+
+Browser:
+   Navigate to http://localhost:3000
+   You should see the Product Finder interface
+
+================================================================================
+
+🛑 HOW TO STOP:
+--------------------------------------------------------------------------------
+- Close both terminal windows, OR
+- Press Ctrl+C in each window
+
+================================================================================
+
+📂 IMPORTANT FILES:
+--------------------------------------------------------------------------------
+START_APPLICATION.bat  - Start everything automatically ⭐ (Windows)
+backend.bat           - Start backend only (Windows)
+frontend.bat          - Start frontend only (Windows)
+backend.sh            - Start backend only (Linux/Ubuntu)
+frontend.sh           - Start frontend only (Linux/Ubuntu)
+START_APPLICATION.sh  - Start both on Linux/Ubuntu
+README_CLIENT.md      - Detailed documentation (includes ngrok sharing guide)
+
+================================================================================
+
+🐛 COMMON ISSUES & SOLUTIONS:
+--------------------------------------------------------------------------------
+
+Issue: "Python is not recognized"
+Solution: Reinstall Python and check "Add Python to PATH" during installation
+
+Issue: "Node is not recognized"
+Solution: Reinstall Node.js and restart your computer
+
+Issue: "Port already in use"
+Solution: Close other applications or restart your computer
+
+Issue: Page doesn't load
+Solution: Wait 15-20 seconds after starting, then refresh browser
+
+Issue: Chatbot shows errors
+Solution: Check backend window for error messages, restart backend.bat
+
+================================================================================
+
+📞 NEED HELP?
+--------------------------------------------------------------------------------
+1. Read README_CLIENT.md for detailed information
+2. Check troubleshooting section in README
+3. Verify both terminal windows are running without errors
+4. Ensure ports 3000 and 8000 are available
+
+================================================================================
+
+🎯 QUICK TEST:
+--------------------------------------------------------------------------------
+After opening http://localhost:3000:
+
+1. Type: "saw blades 160mm"
+2. Press Enter or click Send
+3. You should get product recommendations with red links
+4. Click on product links to view details
+
+================================================================================
+
+✨ FEATURES:
+--------------------------------------------------------------------------------
+- Natural language search (ask in plain English)
+- 113,000+ products in catalog
+- Smart recommendations
+- Clickable product links
+- Bold formatting support
+- Clean, professional interface
+
+================================================================================
+
+📊 SYSTEM REQUIREMENTS:
+--------------------------------------------------------------------------------
+Operating System: Windows 10 or higher
+RAM: 8GB minimum (16GB recommended)
+Disk Space: 2GB free
+Internet: Required for first setup and API calls
+
+================================================================================
+
+🔐 CONFIGURATION:
+--------------------------------------------------------------------------------
+OpenAI API Key: Located in backend/services/langchain_setup.py
+Database: Uses local ChromaDB (no external database needed)
+Embeddings: Pre-generated in backend/scripts/chroma_db
+
+================================================================================
+
+Made with ❤️ for Kyocera Unimerco
+
