@@ -9,3 +9,20 @@ __pycache__/**
 *.pyc
 *.log
 
+# Ignore all .md files except README.md
+*.md
+!README.md
+
+# Frontend package files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.pnp.*
+.yarn/*
+
+# Build and dist directories
+dist/
+build/
+.next/
+out/
+
